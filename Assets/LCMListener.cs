@@ -62,12 +62,15 @@ public class LCMListener : MonoBehaviour
     { 
         instance = this;
 
-        myLCM = new LCM.LCM.LCM();
-
-        myLCM.SubscribeAll(new SimpleSubscriber());
+        StartLCM();
 
         StartCoroutine(SimulateRopeLength(3, 4, .01d));
 
+    }
+
+    public void StartLCM(){
+        myLCM = new LCM.LCM.LCM();
+        myLCM.SubscribeAll(new SimpleSubscriber());
     }
 
     class SimpleSubscriber : LCM.LCM.LCMSubscriber
