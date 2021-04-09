@@ -149,7 +149,7 @@ public class DesktopWebCam : MonoBehaviour
                 // Check if the camera index is not being used by either the skybox or the other displays
                 if (skyboxCameraIdx != prevCamIdx && !displayCameraIdxs.Contains(prevCamIdx))
                 {
-                        if (camList[prevCamIdx].isPlaying)
+                    if (camList[prevCamIdx].isPlaying)
                     {
                         camList[prevCamIdx].Stop();
                     }
@@ -164,7 +164,7 @@ public class DesktopWebCam : MonoBehaviour
 
             if (displayIdx == -1) // Skybox camera feed
             {
-                skyBoxMaterial.SetTexture(Shader.PropertyToID("_RTex"), camList[cameraIdx]);
+                skyBoxMaterial.SetTexture(Shader.PropertyToID("_LTex"), camList[cameraIdx]);
                 skyboxCameraIdx = cameraIdx;
             }
             else // Non-skybox camera feed
