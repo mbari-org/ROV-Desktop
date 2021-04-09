@@ -36,14 +36,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\InformationPanelController.cs" />
-     <Compile Include="Assets\LCMListener.cs" />
-     <Compile Include="Assets\LookAtCamera.cs" />
-     <Compile Include="Assets\MouseIndicatorController.cs" />
-     <Compile Include="Assets\MousePointer.cs" />
-     <Compile Include="Assets\PointerReceiver.cs" />
-     <Compile Include="Assets\QuitProgram.cs" />
-     <Compile Include="Assets\skyboxspace_mouselook_v1.cs" />
+     <Compile Include="Assets\Scripts\AuxilliaryCameraController.cs" />
+     <Compile Include="Assets\Scripts\DesktopSettingsManager.cs" />
+     <Compile Include="Assets\Scripts\DesktopWebCam.cs" />
+     <Compile Include="Assets\Scripts\InformationPanelController.cs" />
+     <Compile Include="Assets\Scripts\LCMListener.cs" />
+     <Compile Include="Assets\Scripts\LookAtCamera.cs" />
+     <Compile Include="Assets\Scripts\MouseIndicatorController.cs" />
+     <Compile Include="Assets\Scripts\MousePointer.cs" />
+     <Compile Include="Assets\Scripts\PointerReceiver.cs" />
+     <Compile Include="Assets\Scripts\QuitProgram.cs" />
+     <Compile Include="Assets\Scripts\skyboxspace_mouselook_v1.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
