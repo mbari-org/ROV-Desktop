@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d6ee7bd7b98e3e541a4f5561d7198072, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: fca6368c779315744826877c4eed8ccf, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -6542,6 +6542,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842946729}
   m_CullTransparentMesh: 0
+--- !u!1001 &875586810
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 270360968091948456, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_Name
+      value: AVPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.29021084
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.55140495
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.18104601
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 630791727220048266, guid: b4260ddb602f7a549b2ebb7ef99f77cf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b4260ddb602f7a549b2ebb7ef99f77cf, type: 3}
 --- !u!1 &878054530
 GameObject:
   m_ObjectHideFlags: 0
@@ -9493,6 +9562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1328155668}
   - component: {fileID: 1328155667}
+  - component: {fileID: 1328155669}
   m_Layer: 0
   m_Name: CameraControllers
   m_TagString: Untagged
@@ -9544,6 +9614,22 @@ Transform:
   m_Father: {fileID: 718682802}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1328155669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328155666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8867790405e3b974d81fcf5faddaf4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skyBoxDropdown: {fileID: 761042729}
+  skyBoxMaterial: {fileID: 2100000, guid: fca6368c779315744826877c4eed8ccf, type: 2}
+  skyBoxDefaultTexture: {fileID: 8400000, guid: 943913d40d636fc4bba3d76def040eab,
+    type: 2}
 --- !u!1 &1329210211
 GameObject:
   m_ObjectHideFlags: 0

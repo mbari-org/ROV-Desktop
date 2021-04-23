@@ -12,14 +12,16 @@ public class AuxCamDisplay{
     List<string> availableCameras;
     bool active;
     Image settingsIcon;
+    List<WebCamTexture> webCamTextureList;
 
     public AuxCamDisplay(int _index, GameObject _display, Dropdown _dropdown, 
-    List<string> _availableCameras, Image _settingsIcon){
+    List<string> _availableCameras, Image _settingsIcon, List<WebCamTexture> _webCamTextureList){
         display = _display;
         dropdown = _dropdown;
         availableCameras = _availableCameras;
         index = _index;
         settingsIcon = _settingsIcon;
+        webCamTextureList = _webCamTextureList;
 
         UpdateDropdown();
         GetSavedSettings();
@@ -45,8 +47,8 @@ public class AuxCamDisplay{
         options.AddRange(availableCameras);
         dropdown.AddOptions(options);
         dropdown.onValueChanged.AddListener(delegate { DropdownTriggered();});
-
     }
+    
     void SetDisplayToCamera(string cameraName){
     if (cameraName != "No Camera" && !active){
         DisplayIsShown(true);
@@ -57,7 +59,8 @@ public class AuxCamDisplay{
     PlayerPrefs.SetString("auxcam"+index, cameraName);
     Debug.Log("Setting camera to " + cameraName);
     RawImage rawImage = display.GetComponentInChildren(typeof(RawImage)) as RawImage;
-    rawImage.texture = new WebCamTexture(cameraName, Screen.width, Screen.height);
+    webCamTextureList.Where(texture => texture.deviceName == cameraName).ToList()[0].Play();
+    rawImage.texture = webCamTextureList.Where(texture => texture.deviceName == cameraName).ToList()[0];    
     }
 
     void DropdownTriggered(){
@@ -113,28 +116,24 @@ public class AuxilliaryCameraController : MonoBehaviour
     public Image auxCamSettingsIcon6;
 
     private List<string> availableCameras = new List<string>();
+    private List<WebCamTexture> webCamTextureList = new List<WebCamTexture>();
 
     // Start is called before the first frame update
     void Start()
     {
         GetAvailableWebCamDevices();
-        auxCamDisplay1 = new AuxCamDisplay(1, auxCamDisplayGameObject1, auxCamDropDown1, availableCameras, auxCamSettingsIcon1);
-            auxCamDisplay2 = new AuxCamDisplay(2, auxCamDisplayGameObject2, auxCamDropDown2, availableCameras, auxCamSettingsIcon2);
-        auxCamDisplay3 = new AuxCamDisplay(3, auxCamDisplayGameObject3, auxCamDropDown3, availableCameras, auxCamSettingsIcon3);
-        auxCamDisplay4 = new AuxCamDisplay(4, auxCamDisplayGameObject4, auxCamDropDown4, availableCameras, auxCamSettingsIcon4);
-        auxCamDisplay5 = new AuxCamDisplay(5, auxCamDisplayGameObject5, auxCamDropDown5, availableCameras, auxCamSettingsIcon5);
-        auxCamDisplay6 = new AuxCamDisplay(6, auxCamDisplayGameObject6, auxCamDropDown6, availableCameras, auxCamSettingsIcon6);
+        auxCamDisplay1 = new AuxCamDisplay(1, auxCamDisplayGameObject1, auxCamDropDown1, availableCameras, auxCamSettingsIcon1,  webCamTextureList);
+        auxCamDisplay2 = new AuxCamDisplay(2, auxCamDisplayGameObject2, auxCamDropDown2, availableCameras, auxCamSettingsIcon2,  webCamTextureList);
+        auxCamDisplay3 = new AuxCamDisplay(3, auxCamDisplayGameObject3, auxCamDropDown3, availableCameras, auxCamSettingsIcon3,  webCamTextureList);
+        auxCamDisplay4 = new AuxCamDisplay(4, auxCamDisplayGameObject4, auxCamDropDown4, availableCameras, auxCamSettingsIcon4,  webCamTextureList);
+        auxCamDisplay5 = new AuxCamDisplay(5, auxCamDisplayGameObject5, auxCamDropDown5, availableCameras, auxCamSettingsIcon5,  webCamTextureList);
+        auxCamDisplay6 = new AuxCamDisplay(6, auxCamDisplayGameObject6, auxCamDropDown6, availableCameras, auxCamSettingsIcon6, webCamTextureList);
 
-    
-    
-    
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update(){
+                }
     
    void GetAvailableWebCamDevices()
     {
@@ -147,7 +146,7 @@ public class AuxilliaryCameraController : MonoBehaviour
         }
         else{
             availableCameras = devices.Select(device => device.name).ToList();
-            // availableDevices = devices.Select(device => device).ToList();
+            webCamTextureList = devices.Select(device => new WebCamTexture(device.name, Screen.width, Screen.height)).ToList();
 
         }
 

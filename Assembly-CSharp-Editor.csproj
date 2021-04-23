@@ -36,6 +36,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\AVProLiveCamera\Editor\AVProLiveCameraEditor.cs" />
+     <Compile Include="Assets\AVProLiveCamera\Editor\AVProLiveCameraManagerEditor.cs" />
+     <Compile Include="Assets\AVProLiveCamera\Editor\AVProLiveCameraMaterialApplyEditor.cs" />
+     <Compile Include="Assets\AVProLiveCamera\Editor\AVProLiveCameraMeshApplyEditor.cs" />
+     <Compile Include="Assets\AVProLiveCamera\Editor\AVProLiveCameraUGUIComponentEditor.cs" />
      <Compile Include="Assets\Editor\SkyboxFisheyeShaderGUI.cs" />
      <None Include="Assets\Editor\Skybox-Fisheye.shader" />
     <Reference Include="UnityEngine">
